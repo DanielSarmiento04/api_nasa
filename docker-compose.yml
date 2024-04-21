@@ -2,13 +2,18 @@ version: '3.9'
 
 services:
   postgres:
-    container_name: db_
+    container_name: db_chat
     image: postgres:14-alpine
     ports:
       - 5432:5432
     volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=S3cret
       - POSTGRES_USER=citizix_user
       - POSTGRES_DB=citizix_db
+
+
+volumes:
+  db:
+    driver: local
