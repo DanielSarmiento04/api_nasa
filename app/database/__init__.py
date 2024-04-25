@@ -8,11 +8,22 @@ from sqlmodel import (
 from typing import (
     Optional,
 )
+from ..constants import (
+    NAME_DATABASE,
+    PASSWORD_DATABASE,
+    USERNAME_DATABASE,
+)
 
-
+connect_args = {"check_same_thread": False}
 
 ENGINE = create_engine(
-    "postgresql+psycopg2://citizix_user:S3cret@localhost/citizix_db"
+    f"postgresql+psycopg2://{USERNAME_DATABASE}:{PASSWORD_DATABASE}@localhost/{NAME_DATABASE}",
+    echo=True, 
+    connect_args=connect_args,
 )
 
 
+def create_db_and_tables():
+    '''
+    '''
+    SQLModel.metadata.create_all(ENGINE)
