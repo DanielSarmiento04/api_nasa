@@ -1,6 +1,3 @@
-from . import (
-    ENGINE
-)
 from sqlmodel import (
     SQLModel,
     Field
