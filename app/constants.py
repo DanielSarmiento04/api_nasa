@@ -3,9 +3,10 @@ import logging
 
 __config__ = dotenv_values(".env")
 
-USERNAME_DATABASE = __config__.get('USERNAME_DATABASE')
-PASSWORD_DATABASE = __config__.get('PASSWORD_DATABASE')
-NAME_DATABASE     = __config__.get('NAME_DATABASE')
+USERNAME_DATABASE        = __config__.get('USERNAME_DATABASE')
+PASSWORD_DATABASE        = __config__.get('PASSWORD_DATABASE')
+NAME_DATABASE            = __config__.get('NAME_DATABASE')
+POSTGRES_CLIENT          = __config__.get('POSTGRES_CLIENT')
 
 
 logging.basicConfig(

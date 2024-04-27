@@ -10,6 +10,7 @@ from ..constants import (
     NAME_DATABASE,
     PASSWORD_DATABASE,
     USERNAME_DATABASE,
+    POSTGRES_CLIENT
 )
 from .hero import (
     Hero
@@ -18,7 +19,7 @@ from .hero import (
 # connect_args = {"check_same_thread": False}
 
 ENGINE = create_engine(
-    f"postgresql+psycopg2://{USERNAME_DATABASE}:{PASSWORD_DATABASE}@localhost/{NAME_DATABASE}",
+    f"postgresql+psycopg2://{USERNAME_DATABASE}:{PASSWORD_DATABASE}@{POSTGRES_CLIENT}/{NAME_DATABASE}",
     echo=True, 
     # connect_args=connect_args,
 )

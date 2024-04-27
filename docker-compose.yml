@@ -8,14 +8,41 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
+    networks:
+      - hero_net
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     restart: always
 
+  ms_hero:
+    container_name: ms_hero
+    build: ./
+    ports:
+      - 8000:80
+    networks:
+      - hero_net
+    depends_on:
+      - postgres
+    restart: always
 
+  server_reverse_proxys:
+    build: ./reverse_proxy
+    container_name: server_reverse_proxys
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - hero_net
+    depends_on:
+      - ms_hero
 
 volumes:
   postgres-data:
     driver: local
+
+networks:
+  hero_net:
+    driver: bridge
+
