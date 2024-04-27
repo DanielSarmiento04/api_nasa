@@ -16,11 +16,22 @@ services:
       - "5432:5432"
     restart: always
 
-  ms_hero:
-    container_name: ms_hero
+  ms_hero_1:
+    container_name: ms_hero_1
     build: ./
     ports:
       - 8000:80
+    networks:
+      - hero_net
+    depends_on:
+      - postgres
+    restart: always
+
+  ms_hero_2:
+    container_name: ms_hero_2
+    build: ./
+    ports:
+      - 8001:80
     networks:
       - hero_net
     depends_on:
@@ -36,7 +47,8 @@ services:
     networks:
       - hero_net
     depends_on:
-      - ms_hero
+      - ms_hero_1
+      - ms_hero_2
 
 volumes:
   postgres-data:
