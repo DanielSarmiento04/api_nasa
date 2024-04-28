@@ -51,7 +51,12 @@ or if you want to use a simplified command line
     docker-compose up -d --build
 ```
 
+## Stack
 
+1. FastApi as Rest API framework.
+2. Docker as container manager.
+3. PostgresSql as DataBase.
+4. Nginx as load balancer and reverse proxy.
 
 ## Reference 
 
