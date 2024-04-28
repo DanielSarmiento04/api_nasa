@@ -5,6 +5,21 @@
 
 The aims of this repository is used the stack with python (FastApi) , PostgresSql and nginx as load balancer and server reverse proxy. Finally the project used apache camel to use server discovery 
 
+## Concept API
+
+The API have the capability to manage the Hero, an Hero has the follow parameters
+
+- id
+- name
+- secret_name
+- age
+
+
+> The Api has 3 endpoint
+
+1. `/`  => health check
+2. POST `/heroes/` => create a new hero
+3. GET `/heroes/` => get the heroes
 
 ## Start up
 

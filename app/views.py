@@ -8,6 +8,9 @@ from sqlmodel import (
     Session,
     select
 )
+from typing import (
+    List
+)
 
 @app.on_event('startup')
 async def startup():
@@ -35,7 +38,10 @@ def create_hero(hero: Hero):
         session.refresh(hero)
         return hero
     
-@app.get("/heroes/")
+@app.get(
+    "/heroes/",
+    response_model=List[Hero]
+)
 def read_heroes():
     '''
         Endpoint to get all heroes
