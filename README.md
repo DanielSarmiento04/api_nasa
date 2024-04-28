@@ -3,7 +3,7 @@
 
 ## Resume
 
-The aims of this repository is used the stack with python (FastApi) , PostgresSql and nginx as load balancer and server reverse proxy. Finally the project used apache camel to use server discovery 
+The aims of this repository is used the stack with python (FastApi) , PostgresSql and nginx as load balancer and server reverse proxy.
 
 ## Concept API
 
@@ -14,12 +14,23 @@ The API have the capability to manage the Hero, an Hero has the follow parameter
 - secret_name
 - age
 
-
-> The Api has 3 endpoint
+> The Api has 3 endpoints
 
 1. `/`  => health check
 2. POST `/heroes/` => create a new hero
 3. GET `/heroes/` => get the heroes
+
+
+## Concept Infrastructure
+
+The project has an integration with docker compose, see more in the docker-compose.yml file.
+
+1. Postgres SQL, image.
+2. ms_hero_1, api image.
+3. ms_hero_2, api image.
+4. server_reverse_proxys, nginx image, the nginx conf file is at the follow path `reverse_proxy/nginx.conf`.
+
+The load balancer is configured to send a request to each ms_hero follow least connection.
 
 ## Start up
 
