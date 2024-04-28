@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  https://github.com/DanielSarmiento04/infraestructure_integration
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jose Daniel
+    family-names: Sarmiento
+    email: josedanielsarmiento219@gmail.com
+    affiliation: mechanical engineering
+repository-code: >-
+  https://github.com/DanielSarmiento04/infraestructure_integration
+abstract: >-
+  The aims of this repository is used the stack with python
+  (FastApi) , PostgresSql and nginx as load balancer and
+  server reverse proxy.
+keywords:
+  - Nginx
+  - FastAPI
+  - PostgresSql
+license: MIT
+version: '1.0'
+date-released: '2024-04-27'
